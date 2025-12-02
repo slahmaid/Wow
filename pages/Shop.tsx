@@ -3,10 +3,6 @@ import { Aperture, Sun, Eye, Layers, Check, ShieldCheck, Truck, RefreshCcw } fro
 import { Button } from '../components/ui/Button';
 import { useCart } from '../context/CartContext';
 
-interface ShopProps {
-  onOpenCheckout?: () => void;
-}
-
 const bundles = [
   { 
     id: 'single', 
@@ -39,7 +35,7 @@ const galleryImages = [
   { id: 3, icon: Eye, label: "Night Vision" },
 ];
 
-export const Shop: React.FC<ShopProps> = ({ onOpenCheckout }) => {
+export const Shop: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedBundle, setSelectedBundle] = useState('single');
   const { addToCart, setIsCartOpen } = useCart();

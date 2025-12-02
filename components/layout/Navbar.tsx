@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 
 interface NavbarProps {
@@ -13,7 +13,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { setIsCartOpen, cartItems } = useCart();
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
